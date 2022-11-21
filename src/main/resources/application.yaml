@@ -1,1 +1,10 @@
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task-tracker
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
 
