@@ -1,10 +1,17 @@
 spring:
+  application:
+    name: task-service
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
-    url: jdbc:postgresql://localhost:5432/task-tracker
-    username: postgres
-    password: root
+    url: ${DATABASE_URL}/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+
 
