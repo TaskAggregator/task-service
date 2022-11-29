@@ -53,7 +53,7 @@ jib {
 	}
 
 	to {
-		image "docker.io/caspaze/task-service:${project.version}"
+		image "docker.io/caspaze/${project.name}:${project.version}"
 
 		auth {
 			username System.getenv('DOCKER_USERNAME')
