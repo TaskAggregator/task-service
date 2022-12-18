@@ -2,7 +2,6 @@ spring:
   application:
     name: task-service
   liquibase:
-    enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
     url: ${DATABASE_URL}/${POSTGRES_DB}
