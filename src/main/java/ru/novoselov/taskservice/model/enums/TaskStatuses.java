@@ -7,7 +7,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum TaskStatuses {
     CREATED(1L),
-    IN_PROGRESS(2L);
+    IN_PROGRESS(2L),
+    COMPLETED(3L);
 
     private final Long id;
 }
