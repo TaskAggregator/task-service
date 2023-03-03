@@ -1,0 +1,68 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-task-table
+      author: Vadim Novoselov
+      changes:
+        - createTable:
+            tableName: tasks
+            schemaName: task_service
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_task_status_id
+                    references: task_service.task_status(id)
+              - column:
+                  name: creator_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_creator_id
+                    references: task_service.users(id)
+              - column:
+                  name: executor_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_exec_id
+                    references: task_service.users(id)
+              - column:
+                  name: created_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: bigint
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_status_id
+                    references: task_service.task_status(id)
+              - column:
+                  name: public_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+
+
+
+

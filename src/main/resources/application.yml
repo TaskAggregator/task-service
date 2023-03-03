@@ -2,23 +2,32 @@ spring:
   application:
     name: task-service
   liquibase:
-    enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
-    url: ${DATABASE_URL}/${POSTGRES_DB}
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/task_tracker}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: none
     generate-ddl: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      bootstrap-servers: localhost:9092
+
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+
 
 
