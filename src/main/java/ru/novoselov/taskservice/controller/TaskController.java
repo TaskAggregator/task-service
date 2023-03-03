@@ -23,9 +23,9 @@ public class TaskController {
         return ResponseEntity.ok().build();
     }
 
-    @PatchMapping(value = "/complete/{id}")
-    public ResponseEntity<Void> completeTask(@PathVariable("id") @Valid CompleteTaskRequest completeRequest) {
-        taskService.complete(completeRequest);
+    @PatchMapping(value = "/{id}/complete")
+    public ResponseEntity<Void> completeTask(@PathVariable("id") @Valid Long taskId) {
+        taskService.complete(taskId);
         return ResponseEntity.ok().build();
     }
 }

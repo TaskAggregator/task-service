@@ -1,17 +1,19 @@
 package ru.novoselov.taskservice.domain.event;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@RequiredArgsConstructor
 public abstract class Event {
-    private String source;
-    private LocalDateTime dispatchTime;
-    private Long correlationId;
-    private UUID publicId;
+    private final String topic;
+    @Setter
+    protected String source;
+    private final LocalDateTime dispatchTime = LocalDateTime.now();
+    private final UUID publicId = UUID.randomUUID();
 
 }

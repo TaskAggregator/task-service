@@ -1,14 +1,20 @@
 package ru.novoselov.taskservice.domain;
 
-import org.springframework.stereotype.Service;
-import ru.novoselov.taskservice.domain.event.TaskCreatedEvent;
+import lombok.experimental.UtilityClass;
+import ru.novoselov.taskservice.domain.event.TaskCompleted;
+import ru.novoselov.taskservice.domain.event.TaskCreated;
 import ru.novoselov.taskservice.entity.Task;
 
-@Service
+@UtilityClass
 public class EventFactory {
 
-    public TaskCreatedEvent buildTaskCreatedEvent(Task task) {
-        return new TaskCreatedEvent(task.getId());
+
+    public TaskCreated buildTaskCreatedEvent(Task task) {
+        return new TaskCreated(task);
+    }
+
+    public TaskCompleted buildTaskCompletedEvent(Task task) {
+        return new TaskCompleted(task);
     }
 
 }
