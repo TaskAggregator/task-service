@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.novoselov.taskservice.domain.EventFactory;
-import ru.novoselov.taskservice.domain.EventPublishService;
 import ru.novoselov.taskservice.error.exception.StatusNotFoundException;
 import ru.novoselov.taskservice.error.exception.TaskNotFoundException;
 import ru.novoselov.taskservice.mapper.TaskMapper;

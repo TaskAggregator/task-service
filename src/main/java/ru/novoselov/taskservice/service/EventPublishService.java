@@ -1,4 +1,4 @@
-package ru.novoselov.taskservice.domain;
+package ru.novoselov.taskservice.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
