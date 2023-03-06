@@ -11,7 +11,7 @@ import ru.novoselov.taskservice.model.response.CreateTaskResponse;
 import ru.novoselov.taskservice.service.TaskService;
 
 @RestController
-@RequestMapping("/v1/task")
+@RequestMapping("/task")
 @RequiredArgsConstructor
 public class TaskController {
 

@@ -16,4 +16,7 @@ public class EventPublishService {
     public void publish(Event event) {
         kafkaTemplate.send(event.getTopic(), UUID.randomUUID().toString(), event);
     }
+
+
 }
+

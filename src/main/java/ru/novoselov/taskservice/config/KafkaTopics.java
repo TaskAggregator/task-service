@@ -7,7 +7,8 @@ import lombok.Getter;
 @Getter
 public enum KafkaTopics {
     TASK_CREATED("task-created"),
-    TASK_COMPLETED("task-completed");
+    TASK_COMPLETED("task-completed"),
+    USER_SIGNUP("user-signup");
 
     private final String name;
 }
