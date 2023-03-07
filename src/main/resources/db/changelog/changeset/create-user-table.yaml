@@ -5,7 +5,7 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: users
-            schemaName: task_service
+            schemaName: task
             columns:
               - column:
                   name: id
@@ -16,6 +16,11 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: username
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
                   type: varchar
                   constraints:
                     nullable: false
