@@ -1,4 +1,4 @@
-package ru.novoselov.taskservice.domain;
+package ru.novoselov.taskservice.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -16,4 +16,7 @@ public class EventPublishService {
     public void publish(Event event) {
         kafkaTemplate.send(event.getTopic(), UUID.randomUUID().toString(), event);
     }
+
+
 }
+
