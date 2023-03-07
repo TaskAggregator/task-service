@@ -5,7 +5,7 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: task_status
-            schemaName: task_service
+            schemaName: task
             columns:
               - column:
                   name: id

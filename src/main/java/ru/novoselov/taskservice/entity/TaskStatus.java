@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "task_status", schema = "task_service")
+@Table(name = "task_status", schema = "task")
 @AllArgsConstructor
 @NoArgsConstructor
 public class TaskStatus {

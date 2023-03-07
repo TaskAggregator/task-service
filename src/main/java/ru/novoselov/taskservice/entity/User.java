@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users", schema = "task_service")
+@Table(name = "users", schema = "task")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,5 +25,9 @@ public class User {
     @NotNull
     @Column(name = "username")
     private String username;
+
+    @NotNull
+    @Column(name = "email")
+    private String email;
 
 }
